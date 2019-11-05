@@ -69,7 +69,9 @@ var dubai = {
     for (var i = 0; i < this.cookiesperhour.length; i++) {
       allsweets = allsweets + this.cookiesperhour[i];
     }
+
     return allsweets;
+
   }
 };
 
@@ -170,9 +172,9 @@ for (var i = 0; i < time.length; i++) {
   dubailist.append(li);
 }
 var totalLi = document.createElement('li');
-totalLi.textcontent = `Total: ${dubai.totalDailySales()}
-cookies`;
+totalLi.textcontent = `Total: ${dubai.totalDailySales()} cookies`;
 dubailist.append(totalLi);
+console.log(dubai.totalDailySales());
 
 var parislist = document.getElementById('paris');
 for (var i = 0; i < time.length; i++) {
@@ -181,9 +183,9 @@ for (var i = 0; i < time.length; i++) {
   parislist.append(li);
 }
 var totalLi = document.createElement('li');
-totalLi.textContent = `Total: ${paris.totalDailySales()}
- cookies`;
+totalLi.textContent = `Total: ${paris.totalDailySales()} cookies`;
 parislist.append(totalLi);
+
 
 
 
