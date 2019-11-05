@@ -1,9 +1,64 @@
 'use strict';
 
 
-var storeName = ['seattle', 'tokyo', 'dubai', 'paris', 'lima'];
+//var storeName = ['seattle', 'tokyo', 'dubai', 'paris', 'lima'];
 
 var time = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+
+function Store(name, min, max, avg) {
+  this.name = name;
+  this.min = min;
+  this.max = max;
+  this.avg = avg;
+  this.cookiesSoldHourly = [];
+
+  this.randomCustomer = function () {
+    return Math.random() * (this.max - this.min) + this.min;
+  };
+
+  this.cookiePerHour = function () {
+    return Math.round(this.randomCustomer() * this.avg);
+  };
+
+  this.eachHourTotals = function () {
+    for (var i = 0; i < time.length; i++) {
+      this.cookiesSoldHourly.push(this.cookiePerHour());
+    }
+  };
+
+  this.totalDailySales = function () {
+    var allsweets = 0;
+    for (var i = 0; i < this.cookiesperhour.length; i++) {
+      allsweets = allsweets + this.cookiesSoldHourly[i];
+    }
+    return allsweets;
+  };
+}
+
+
+
+
+
+
+
+
+
+
+var seattle = new Store('Seattle', 23, 65, 6.3);
+var tokyo = new Store('Tokyo', 3, 24, 1.2);
+var dubai = new Store('Dubai', 11, 38, 3.7);
+var paris = new Store('Paris', 20, 38, 2.3);
+var lima = new Store('Lima', 2, 16, 4.6);
+
+var stores = [seattle, tokyo, dubai, paris, lima]
+
+
+
+
+
+
+
+
 
 var seattle = {
   name: 'seattle',
@@ -172,7 +227,7 @@ for (var i = 0; i < time.length; i++) {
   dubailist.append(li);
 }
 var totalLi = document.createElement('li');
-totalLi.textcontent = `Total: ${dubai.totalDailySales()} cookies`;
+totalLi.textContent = `Total: ${dubai.totalDailySales()} cookies`;
 dubailist.append(totalLi);
 console.log(dubai.totalDailySales());
 
