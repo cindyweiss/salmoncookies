@@ -2,3 +2,9 @@ body{
   background-color: lightyellow;
   color: darkblue;
 }
+main{
+  float: left;
+}
+article {
+  float: right;
+}
