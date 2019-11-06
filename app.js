@@ -82,6 +82,8 @@ var renderHourlyTotalsRow = function (domReference) {
   td.textContent = ('Hourly Totals');
   tr.append(td);
 
+  var franchiseTotal = 0;
+
   for (var hourlyTotals = 0; hourlyTotals < time.length; hourlyTotals++) {
     var total = 0;
     for (var i = 0; i < storeName.length; i++) {
@@ -91,8 +93,18 @@ var renderHourlyTotalsRow = function (domReference) {
     console.log(`total ${total}`);
     var td = document.createElement('td');
     td.textContent = total;
+    franchiseTotal += total;
     tr.append(td);
   }
+
+  td = document.createElement('td');
+  td.textContent = franchiseTotal;
+  tr.append(td);
+
+
+  // var td = document.createElement('td');
+  // td.textContent = 
+  // tr.append(td);
 
   tableContents.append(tr);
 };
