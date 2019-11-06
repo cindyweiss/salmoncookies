@@ -5,7 +5,6 @@
 <head>
   <title> Salmon Cookies</title>
   <link rel="stylesheet" type="text/css" href="style.css" />
-
 </head>
 
 <body>
@@ -15,31 +14,26 @@
   Paris <ul id="paris"></ul> <br>
   Lima <ul id="lima"></ul> <br> -->
 
-  <table id="salmoncookies">
+  <table id="salmoncookies"></table>
 
+  <p id="user-input"> Please enter your new city location in the field below. Thank you.</p>
 
+  <form id="newStore-form">
+    <fieldset>
+      <label for="city-name"> City Name: </label>
+      <input city-name="city-name" type="text" />
 
-  </table>
-  <form id="newStore">
+      <label for="min-number"> Min. number of customers per day: </label>
+      <input min-number="min-number" type="number" />
 
+      <label for="max-number"> Max. number of customers per day: </label>
+      <input max-number="max-number" type="number" />
+
+      <label for="avg-cookies"> Avg. number of cookies purchased per customer: </label>
+      <input avg-cookies="avg-cookie" type="number" />
+    </fieldset>
+    <button type="submit"> Submit Now</button>
   </form>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <script src="./app.js"> </script>
 </body>
 
