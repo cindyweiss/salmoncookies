@@ -1,7 +1,7 @@
 'use strict';
 
 
-//var storeName = ['seattle', 'tokyo', 'dubai', 'paris', 'lima'];
+
 
 var time = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
@@ -33,6 +33,7 @@ function Store(name, min, max, avg) {
     }
     return allsweets;
   };
+
   this.render = function (domReference) {
     var tableContents = document.getElementById('salmoncookies');
     var tr = document.createElement('tr');
@@ -54,18 +55,63 @@ function Store(name, min, max, avg) {
   };
 }
 
+var renderHoursRow = function (domReference) {
+  var tableContents = document.getElementById('salmoncookies');
+  var tr = document.createElement('tr');
+  var td = document.createElement('td');
+  td.textContent = ('');
+  tr.append(td);
+
+  for (var i = 0; i < time.length; i++) {
+    td = document.createElement('td');
+    td.textContent = time[i];
+    tr.append(td);
+  }
+
+  td = document.createElement('td');
+  td.textContent = (' Totals ');
+  tr.append(td);
+
+  tableContents.append(tr);
+};
+
+var renderHourlyTotalsRow = function (domReference) {
+  var tableContents = document.getElementById('salmoncookies');
+  var tr = document.createElement('tr');
+  var td = document.createElement('td');
+  td.textContent = ('Hourly Totals');
+  tr.append(td);
+
+  for (var hourlyTotals = 0; hourlyTotals < time.length; hourlyTotals++) {
+    var total = 0;
+    for (var i = 0; i < storeName.length; i++) {
+      total += storeName[i].cookiesSoldHourly[hourlyTotals];
+
+    }
+    console.log(`total ${total}`);
+    var td = document.createElement('td');
+    td.textContent = total;
+    tr.append(td);
+  }
+
+  tableContents.append(tr);
+};
+
+
 var seattle = new Store('Seattle', 23, 65, 6.3);
 var tokyo = new Store('Tokyo', 3, 24, 1.2);
 var dubai = new Store('Dubai', 11, 38, 3.7);
 var paris = new Store('Paris', 20, 38, 2.3);
 var lima = new Store('Lima', 2, 16, 4.6);
-
+var storeName = [seattle, tokyo, dubai, paris, lima];
 // console.log(seattle)
 // console.log(seattle.randomCustomer());
 // console.log(seattle.cookiePerHour());
 // console.log(seattle.eachHourTotals());
 // console.log(seattle.cookiesSoldHourly);
 
+
+renderHoursRow();
 
 seattle.eachHourTotals();
 seattle.render();
@@ -77,8 +123,7 @@ paris.eachHourTotals();
 paris.render();
 lima.eachHourTotals();
 lima.render();
-
-
+renderHourlyTotalsRow();
 
 
 
