@@ -18,20 +18,19 @@
 
   <p id="user-input"> Please enter your new city location in the field below. Thank you.</p>
 
-  <form id="newStore-form">
-    <fieldset>
-      <label for="city-name"> City Name: </label>
-      <input city-name="city-name" type="text" />
+  <form id="newStoreForm">
 
-      <label for="min-number"> Min. number of customers per day: </label>
-      <input min-number="min-number" type="number" />
+    <label for="cityName"> City Name: </label>
+    <input name="cityName" type="text" />
 
-      <label for="max-number"> Max. number of customers per day: </label>
-      <input max-number="max-number" type="number" />
+    <label for="minNumber"> Min. number of customers per day: </label>
+    <input name="minNumber" type="number" />
 
-      <label for="avg-cookies"> Avg. number of cookies purchased per customer: </label>
-      <input avg-cookies="avg-cookie" type="number" />
-    </fieldset>
+    <label for="maxNumber"> Max. number of customers per day: </label>
+    <input name="maxNumber" type="number" />
+
+    <label for="avgCookies"> Avg. number of cookies purchased per customer: </label>
+    <input name="avgCookies" type="number" />
     <button type="submit"> Submit Now</button>
   </form>
   <script src="./app.js"> </script>
