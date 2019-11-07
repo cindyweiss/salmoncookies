@@ -100,12 +100,6 @@ var renderHourlyTotalsRow = function (domReference) {
   td = document.createElement('td');
   td.textContent = franchiseTotal;
   tr.append(td);
-
-
-  // var td = document.createElement('td');
-  // td.textContent = 
-  // tr.append(td);
-
   tableContents.append(tr);
 };
 
@@ -116,15 +110,11 @@ var dubai = new Store('Dubai', 11, 38, 3.7);
 var paris = new Store('Paris', 20, 38, 2.3);
 var lima = new Store('Lima', 2, 16, 4.6);
 var storeName = [seattle, tokyo, dubai, paris, lima];
-// console.log(seattle)
-// console.log(seattle.randomCustomer());
-// console.log(seattle.cookiePerHour());
-// console.log(seattle.eachHourTotals());
-// console.log(seattle.cookiesSoldHourly);
+
+
 
 
 renderHoursRow();
-
 seattle.eachHourTotals();
 seattle.render();
 tokyo.eachHourTotals();
@@ -136,6 +126,46 @@ paris.render();
 lima.eachHourTotals();
 lima.render();
 renderHourlyTotalsRow();
+
+
+
+function cleanScreenAndRenderAll() {
+  var tableReferance = document.getElementById('salmoncookies');
+  tableReferance.innerHTML = '';
+
+  renderHoursRow(tableReferance);
+
+  for (var storeIndex = 0; storeIndex < storeName.length; storeIndex++) {
+    var currentStore = storeName[storeIndex];
+
+    currentStore.render(tableReferance);
+  }
+
+  renderHourlyTotalsRow();
+
+}
+
+
+var form = document.getElementById('newStoreForm');
+
+form.addEventListener('submit', function (event) {
+  event.preventDefault();
+
+  var newStore = new Store(event.target.cityName.value,
+    parseInt(event.target.minNumber.value),
+    parseInt(event.target.maxNumber.value),
+    parseInt(event.target.avgCookies.value));
+
+  storeName.push(newStore);
+  newStore.eachHourTotals();
+
+  cleanScreenAndRenderAll();
+});
+
+cleanScreenAndRenderAll();
+
+
+
 
 
 
