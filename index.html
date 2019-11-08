@@ -6,13 +6,127 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <style>
+    div.gallery {
+      margin: 5px;
+      border: 1px solid #ccc;
+      float: left;
+      width: 180px;
+    }
+
+    div.gallery:hover {
+      border: 1px solid #777;
+    }
+
+    div.gallery img {
+      width: 100%;
+      height: auto;
+    }
+
+    div.desc {
+      padding: 15px;
+      text-align: center;
+    }
+  </style>
+
 </head>
 
 <body>
+  <h1> Pat's Salmon Cookies</h1>
+  <h2> Locations now serving in Seattle, Paris, Dubai, Lima, and Tokyo <br> All locations open daily from 6:00 A.M.-
+    7:00P.M. local time</h2>
 
-  <a href="sales.html">got to sales</a>
+  <div class="gallery">
+    <a target="_blank" href="img_cookie.jpg">
+      <img src="img_cookie.jpg" alt="cookie" width="600" height="400">
+    </a>
+    <div class="desc"></div>
+  </div>
 
-  <img src="https://codefellows.github.io/code-201-guide/curriculum/class-06/lab/assets/salmon.png">
+  <div class="gallery">
+    <a target="_blank" href="img_family.jpg">
+      <img src="img_family.jpg" alt="family" width="600" height="400">
+    </a>
+    <div class="desc"></div>
+  </div>
+
+  <div class="gallery">
+    <a target="_blank" href="img_fish.jpg">
+      <img src="img_fish.jpg" alt="fish" width="600" height="400">
+    </a>
+    <div class="desc"></div>
+  </div>
+
+  <div class="gallery">
+    <a target="_blank" href="shirt.jpg">
+      <img src="img_shirt.jpg" alt="shirt" width="600" height="400">
+    </a>
+    <div class="desc"></div>
+  </div>
+
+  <div class="gallery">
+    <a target="_blank" href="pic1.jpg">
+      <img src="img_pic1.jpg" alt="salmon" width="600" height="400">
+    </a>
+    <div class="desc"></div>
+  </div>
+
+  <div class="gallery">
+    <a target="_blank" href="chinook.jpg">
+      <img src="img_chinook.jpg" alt="salmon" width="600" height="400">
+    </a>
+    <div class="desc"></div>
+  </div>
+
+
+  <p class#="address">
+    <ul>
+      <li>Seattle Location</li>
+      <li> 1111 Pike Street</li>
+      <li>Seattle, WA. 98108</li>
+      <li>(206) 555-5555</li>
+    </ul>
+  </p>
+  <p class#="address">
+    <ul>
+      <li>Paris Location</li>
+      <li> 65 Faubourg Saint Honoré</li>
+      <li>Paris, Île-de-France 75116</li>
+      <li>01.21.46.03300</li>
+    </ul>
+  </p>
+  <p class#="address">
+    <ul>
+      <li>Dubai Location</li>
+      <li> Al Marsa St</li>
+      <li>Dubai - United Arab Emirates</li>
+      <li>971 4 436 777</li>
+    </ul>
+  </p>
+  <p class#="address">
+    <ul>
+      <li>Lima Location</li>
+      <li> Jr. Diana Mz B Lote 6 Urb. Santa Modesta </li>
+      <li>Santiago De Surco, Lima</li>
+      <li>996-226899 </li>
+    </ul>
+  </p>
+  <p>
+    <ul class#="address">
+      <li>Tokyo Location</li>
+      <li>トヤマケン, イミズシ, チュウオウマチ, 310-1025 </li>
+      <li>310-1025, Chuomachi, Imizu-shi, Toyama</li>
+      <li>934-0012</li>
+      <li>+8188-742-7277 </li>
+    </ul>
+  </p>
+
+
+
+
+  <a href="sales.html">go to sales</a>
+  <script src="./app.js"> </script>
 
 </body>
 
