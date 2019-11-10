@@ -1,7 +1,9 @@
 body{
   background-color: lightyellow;
   color: darkblue;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
  h2{
    color: salmon;
    margin: 15px;
@@ -23,18 +25,56 @@ border: dotted 3px;
 margin: 10px;
 padding:10px;
 font-size: 30px;
-}
+background-color: cornflowerblue;
+ }
 
 #user-input{
   font-size: 20px;
   margin-left: 10px;
+  background-color: rgb(189, 123, 26);
 }
 
 #salmoncookies{
   text-align: center;
+  background-color: cyan;
+  font-family: Arial, Helvetica;
+  color: rgb(58, 27, 27);
+  margin: 20px;
   }
   
 ul{
     margin: 20px;
     }
   
+    .gallery {
+      margin: 5px;
+      border: 1px solid #ccc;
+      float: left;
+      width: 180px;
+    }
+
+    .gallery:hover {
+      border: 1px solid #777;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+    }
+    .address{
+  text-align: inline;
+}
+  
+.who{
+  border: solid;
+  margin: 20px;
+  padding: 20px;
+  color: #000000;
+  background: #777;
+}
+a{
+  border-style: outset;
+  padding: 10px;
+  color: rgb(182, 112, 26);
+
+}
